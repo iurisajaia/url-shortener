@@ -25,15 +25,16 @@
                         <p class="wow fadeInUp" data-wow-delay=".6s">Lorem ipsum dolor sit amet, consectetur adipisicing
                             elit. Eligendi, labore.</p>
 
-                        <div class="input-group mb-3">
+                        <form method="POST" action="{{route('shorten')}}" class="input-group mb-3">
+                            @csrf
                             <input type="text" class="form-control shorten-input" placeholder="PASTE YOUR URL"
-                                   aria-describedby="basic-addon2">
+                                   aria-describedby="basic-addon2" name="url">
                             <div class="input-group-append">
                                 <button class="btn main-btn bordered-btn btn-white arrow-btn wow fadeInUp"
                                         data-wow-delay=".7s">Shorten
                                 </button>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-lg-6">

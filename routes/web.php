@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use \App\Http\Controllers\RoutesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home.index');
-});
+Route::get('/', [RoutesController::class , 'index'])->name('index');
+Route::post('/shorten', [RoutesController::class , 'shorten'])->name('shorten');
+Route::get('/{id}', [RoutesController::class , 'redirectToUrl'])->name('redirect');
